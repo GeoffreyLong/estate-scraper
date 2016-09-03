@@ -1,3 +1,3 @@
-angular.module('wordLadder').config([function(config){
+angular.module('estateScraper').config([function(config){
 
 }]);
