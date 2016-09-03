@@ -20,7 +20,8 @@ router.get('/api/user', function(req, res) {
 });
 
 router.get('/api/realtor', function(req, res) {
-  x('http://www.realtor.com/realestateandhomes-search/03855', '.list-unstyled', [{
+  console.log(req.query.zip);
+  x('http://www.realtor.com/realestateandhomes-search/' + req.query.zip, '.list-unstyled', [{
     address: {
       address: '.listing-street-address',
       city: '.listing-city',
@@ -40,6 +41,7 @@ router.get('/api/realtor', function(req, res) {
           validListings.push(listing);
         }
       });
+      console.log(validListings);
       res.status(200).send(validListings);
     }
   });

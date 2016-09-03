@@ -1,1 +1,16 @@
-hello world
+<div layout="row" layout-align="start start">
+  <md-input-container>
+    <label>Zip Code</label>
+    <input ng-model="info.zip">
+  </md-input-container>
+  <md-button ng-click="refreshListing()" style="margin-top:15px">
+    Go
+  </md-button>
+</div>
+
+<div ng-repeat="listing in listings">
+  {{listing.address.address}}
+  {{listing.address.city}}
+  {{listing.address.region}}
+  {{listing.price}}
+</div>
